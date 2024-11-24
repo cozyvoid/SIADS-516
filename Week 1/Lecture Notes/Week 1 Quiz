@@ -1,0 +1,41 @@
+1. Which of the following is not one of Laney’s 3Vs?
+
+    - Velocity
+    - Variety
+    - Volume
+    > Versatility
+
+2. Which of the following best matches the meaning of "velocity" in the general context of Big Data?
+
+    > The rate at which data is being generated
+    - the rate at which data can be uploaded/downloaded
+    - The processing speed contraints of the hardware handling the data
+    - Data describing either locational movement or otherwise tracking changes
+
+3. True or False: A "combining stage" working with data would correspond with the Map stage of MapReduce.
+
+    - True
+    > False
+
+4. True or False: There must always be a reduction step in MapReduce
+
+    - True
+    > False
+
+5. True or False: We are able to apply distributed computing solutions like MapReduce to large datasets because we are able to subdivide the data into discrete, independently-processable components (such as lines of a file) without major inter-component dependencies.
+
+    > True
+    - False
+
+6. Adding more computing power to existing machines is an example if which type of scaling?
+
+    > Vertical scaling
+    - Horizontal scaling
+
+7. Which of the following is not a main Hadoop module discussed in Week 1?
+
+    > Hadoop Assembler
+    - Hadoop Common
+    - Hadoop Distributed File System (HDFS)
+    - Hadoop Yet Another Resource Negotiator (YARN)
+
