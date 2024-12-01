@@ -1,0 +1,27 @@
+1. True or False: Spark requires Hadoop
+- False
+
+2. Which of the following do driver programs use to access Spark?
+- A SparkContext Object
+- YARN
+> A SparkSession Object
+- An initial Resilient Distributed Dataset (RDD)
+
+3. Which of the following is NOT true of a Resilient Distributed Dataset (RDD)?
+- RDDs can be manipulated in parallel
+- RDDs have three primary operations: create, transform, and action
+> RDDs are mutable collections of objects
+- RDDs can be distributed across a cluster
+
+4. Which of the following RDD actions mentioned in Week 2 should you practice extra caution when using?
+- Count()
+- Take()
+- First()
+> Collect()
+
+5. True or False: When working with RDDs, using a transformation creates a new RDD
+> True
+
+6.  Which of the following is true of Pair RDDs?
+- Pair RDD's consist of key-value pairs with unique keys, much like Python dictionaries
+> Pair RDD's consist of key-value pairs where not all keys must be unique
