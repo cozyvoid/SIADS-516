@@ -1,28 +1,73 @@
-1. True or False: Spark requires Hadoop
-- False
+## 1. True or False: Spark requires Hadoop
+## - False
 
-2. Which of the following do driver programs use to access Spark?
+## 2. Which of the following do driver programs use to access Spark?
 - A SparkContext Object
 - YARN
-> A SparkSession Object
+## > A SparkSession Object
 - An initial Resilient Distributed Dataset (RDD)
 
-3. Which of the following is NOT true of a Resilient Distributed Dataset (RDD)?
+## 3. Which of the following is NOT true of a Resilient Distributed Dataset (RDD)?
 - RDDs can be manipulated in parallel
 - RDDs have three primary operations: create, transform, and action
-> RDDs are mutable collections of objects
+## > RDDs are mutable collections of objects
 - RDDs can be distributed across a cluster
 
-4. Which of the following RDD actions mentioned in Week 2 should you practice extra caution when using?
+## 4. Which of the following RDD actions mentioned in Week 2 should you practice extra caution when using?
 - Count()
 - Take()
 - First()
-> Collect()
+## > Collect()
 
-5. True or False: When working with RDDs, using a transformation creates a new RDD
-> True
+## 5. True or False: When working with RDDs, using a transformation creates a new RDD
+## > True
 
-6.  Which of the following is true of Pair RDDs?
+## 6.  Which of the following is true of Pair RDDs?
 - Pair RDD's consist of key-value pairs with unique keys, much like Python dictionaries
-> Pair RDD's consist of key-value pairs where not all keys must be unique
+## > Pair RDD's consist of key-value pairs where not all keys must be unique
 
+### Solutions with Explanations:
+
+---
+
+**1. True or False: Spark requires Hadoop**  
+**Answer: False**  
+**Explanation:**  
+Spark does not require Hadoop to operate. While Spark can run on Hadoop's YARN cluster manager and utilize Hadoop Distributed File System (HDFS) for storage, it is a standalone system that can function independently.
+
+---
+
+**2. Which of the following do driver programs use to access Spark?**  
+**Answer: A SparkSession Object**  
+**Explanation:**  
+Driver programs access Spark using a `SparkSession`, which is the entry point to using Spark's functionality in Spark 2.0 and later. It encapsulates all of Spark's core APIs, including DataFrame and Dataset APIs, making it simpler than `SparkContext` for most applications.
+
+---
+
+**3. Which of the following is NOT true of a Resilient Distributed Dataset (RDD)?**  
+**Answer: RDDs are mutable collections of objects**  
+**Explanation:**  
+RDDs are immutable, meaning once created, they cannot be modified. Instead, transformations create new RDDs. The immutability helps ensure consistency and fault tolerance in distributed systems.
+
+---
+
+**4. Which of the following RDD actions mentioned in Week 2 should you practice extra caution when using?**  
+**Answer: Collect()**  
+**Explanation:**  
+The `collect()` action retrieves all elements of the RDD to the driver program, which can cause memory overflow if the RDD is large. Use it cautiously, especially when working with large datasets.
+
+---
+
+**5. True or False: When working with RDDs, using a transformation creates a new RDD**  
+**Answer: True**  
+**Explanation:**  
+RDD transformations, such as `map()` or `filter()`, always produce a new RDD rather than modifying the existing one. This immutability is a core property of RDDs.
+
+---
+
+**6. Which of the following is true of Pair RDDs?**  
+**Answer: Pair RDD's consist of key-value pairs where not all keys must be unique**  
+**Explanation:**  
+In Pair RDDs, keys are not required to be unique. This flexibility allows Pair RDDs to represent data more broadly, enabling operations like grouping or reducing by key.
+
+--- 
