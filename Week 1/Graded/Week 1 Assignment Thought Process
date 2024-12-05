@@ -1,0 +1,43 @@
+Understanding the Problem
+The goal is to process a large text file and identify the top 10 words with the highest syllable counts. This involves:
+    1. Reading and parsing the text.
+    2. Counting syllables for each word.
+    3. Sorting the words by their syllable counts.
+    4. Returning the top 10 results.
+
+Steps to Solve the Problem
+1. Setting Up the Environment:
+    - Use the mrjob library for the MapReduce job.
+    - Import necessary libraries: re for regex, syllables for counting syllables, and sys for error logging.
+2. Splitting the Text:
+    - Define a splitter function to break the text into individual words using regex.
+3. Filtering Words:
+    - Create a set of STOPWORDS to filter out common words that should be excluded from analysis.
+4. Mapping Words to Syllable Counts:
+    - Implement a mapper_get_words function to:
+        - Split lines into words.
+        - Convert words to lowercase.
+        - Filter out stopwords and non-alphabetic words.
+        - Estimate syllable counts for remaining words.
+        - Yield (syllable_count, word) pairs.
+5. Reducing and Sorting Results:
+    - Define a reducer_find_top_ten function to:
+        - Collect and deduplicate the (syllable_count, word) pairs.
+        - Sort the results by syllable count (descending) and then alphabetically.
+        - Yield the top 10 words.
+6. Execution:
+    - Set up the MRMostSyllables class with the necessary steps (mapper and reducer).
+    - Use the run() method to execute the MapReduce job.
+
+Key Considerations
+1. Efficiency:
+    - Ensure the map and reduce functions are efficient and handle large datasets gracefully.
+2. Accuracy:
+    - Use the syllables.estimate function correctly to get accurate syllable counts.
+    - Filter out non-alphabetic and stop words to focus on meaningful words.
+3. Sorting and Duplicates:
+    - Use a set to remove duplicate words in the reducer.
+    - Sort the results by syllable count and alphabetically to get the top 10 words.
+4. Testing and Debugging:
+    - Test the script on a small file to verify correctness.
+    - Use debug prints to troubleshoot any issues with word splitting, filtering, or syllable counting.
