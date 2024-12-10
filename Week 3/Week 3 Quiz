@@ -1,0 +1,44 @@
+1. Which of the following is true?
+
+> RDD Actions return non-RDDs
+- Spark Datasets are currently compatible with Python
+- SparkContext is considered to be the entry-point for working with Spark dataframes
+- RDD stands for Resilient Dynamic Dataset
+
+2. Which of the following are ways to display or data from a Spark dataframe?
+
+> SparkDF.show()
+> SparkDF.first()
+> SparkDF.head(n)
+> SparkDF.take(n)
+
+3. True or False: “toDF()” is a method to create a new Spark dataframe comprised by selected columns of a pre-existing one
+
+> True
+
+4. Which of the following is a method to create an instance of a given dataframe TheDF with a new column called Weight_Unadjusted, initialized as a copy of a pre-existing column called Weight?
+
+- TheDF.withColumn(“Weight_Unadjusted”, “Weight”)
+> TheDF.withColumn(“Weight_Unadjusted”, col(“Weight”))
+- TheDF.withColumn(col(“Weight_Unadjusted”), “Weight”)
+
+5. Which of the following is not usable to describe a dataframe?
+
+- df.columns
+- df.dtypes
+- df.count()
+> df.rows()
+
+6. Which of the following functions/methods creates a row for each value in a given list (or array, or similar structure)?
+
+- toDF()
+> explode()
+- groupBy()
+- filter()
+
+7. When working with a Spark dataframe, to make a new column that is assigned to one value/expression if a condition is fulfilled, and another value/expression if the condition is unfulfilled, what sequence of methods would be used?
+
+- when().else()
+- if().else()
+- if().elif().else()
+> when().otherwise()
